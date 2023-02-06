@@ -2,12 +2,22 @@ package domain;
 
 import java.util.Set;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
 public class Aluno {
+	
+	@OneToMany
+	@JoinColumn
+	private Set<Disciplina> listaDeDisciplinas;
+
+	
+	String nome;
+	
 	public Aluno(String nome2) {
 		// TODO Auto-generated constructor stub
 	}
-	Set<Disciplina> disciplinas;
-	String nome;
+	
 	public Set<Disciplina> getDisciplinas() {
 		return disciplinas;
 	}
